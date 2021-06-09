@@ -1,0 +1,68 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+@model SampleMvcApp.Models.ClientDetailsVM
+
+@if (User.Identity.IsAuthenticated)
+{
+<div class="row">
+    <div class="col-md-12">
+        <h2>Auth0 ASP.NET Core Authorization and Authentication Project</h2>
+        <p>
+            
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="text-info">Application Details</h3>
+                </div>
+
+            </div>
+
+            <div class="border bg-white">
+                <br />
+                <div>
+                    <table class="table table-striped border">
+                        <tr class="table-secondary">
+                            <th>
+                                S. No.
+                            </th>
+                            <th>
+                                Application Name
+                            </th>
+                            <th>
+                                Authentication(s)
+                            </th>
+                            <th>
+                                Authorization(s)
+                            </th>
+                        </tr>
+                        @foreach (var item in Model.FinalResultCollection.Select((x, i) => new { Data = x, Index = i + 1 }))
+                        {
+        <tr>
+            <td>
+                @item.Index
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Data.Application)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Data.Authentication)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Data.Authorization)
+            </td>
+        </tr>}
+                    </table>
+                </div>
+            </div>
+
+
+
+
+
+    </div>
+</div> }
+            else
+            {
+<div class="row">
+    <div class="col-md-12">
+        <h2>Please click login to continue.</h2>
+    </div>
+</div>}
