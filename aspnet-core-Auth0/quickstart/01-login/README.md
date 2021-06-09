@@ -8,8 +8,8 @@ This application has been developed in Asp.Net and it lists the applications ass
 The sample application on [https://auth0.com/docs/quickstart/webapp/aspnet-core/01-login] has been used as the basis for implementing Auth0 authentication and further modifications have been done to include the authentication and authorization details for the clients.
 The following calls have been done in the code
 
-| Route calls      						   | Fields to display| Additional info  |
-| ----------------------------------------:|-----------------:| -------------------------------------------------------------------------------------------------:|
+| Route calls      						       | Fields to display| Additional info  |
+|:-----------------------------------------|:-----------------|:--------------------------------------------------------------------------------------------------|
 | Get all clients route (/v2/clients)      | $.name field     | For displaying the list of applications and $.client_id to make further calls                     |
 | Get all connections (/v2/connections)    | $.name field     | $.client_id field to lookup in enabled_clients  and display the corresponding authentication name |
 | Get all client grants (v2/client-grants) | $.audience field | Search the $.client_id field and display corresponding $.audience                                 |
