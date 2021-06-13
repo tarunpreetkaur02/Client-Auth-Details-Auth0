@@ -40,7 +40,7 @@ function userWhitelistForSpecificApp(user, context, callback) {
     return callback(null, user, context);
   }
 
-  const whitelist = ['tarun.yps@gmail.com']; // authorized users
+  const whitelist = ['abc@gmail.com']; // authorized users
   const userHasAccess = whitelist.some(function (email) {
     return email === user.email;
   });
